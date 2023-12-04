@@ -1,0 +1,265 @@
+header {
+    background: #eaf0ff;
+    padding: 33px 20px;
+    transition: 0.5s ease-in-out;
+}
+
+header .contRow {
+    display: flex;
+    align-items: center;
+}
+
+header .contRow .logo .logoDark {
+    display: none;
+}
+
+header .contRow nav {
+    margin: 15px 93px 0 auto;
+}
+
+header .contRow nav .menu {
+    display: flex;
+    column-gap: 40px;
+    transition: 1s ease-in-out;
+}
+
+header .contRow nav .menu li a {
+    position: relative;
+    color: #252525;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    transition: 500ms ease-in-out;
+}
+
+header .contRow nav .menu li a:hover {
+    color: #516caf;
+}
+
+header .contRow nav .menu li a::after {
+    content: "";
+    width: 0;
+    height: 1px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: -7px;
+    background: #516caf;
+    transition: 500ms ease-in-out;
+}
+
+header .contRow nav .menu li a:hover::after {
+    width: 100%;
+}
+
+header .contRow nav .menu.slide {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+}
+
+header .contRow .lang {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+header .contRow .lang a {
+    color: #000;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-bottom: 2px solid rgb(37, 37, 37);
+}
+
+header .contRow .lang .dropdownMenu {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 33px;
+    left: 0;
+    transition: 0.3s ease-in-out;
+}
+
+header .contRow .lang .dropdownMenu li:first-child {
+    margin-bottom: 12px;
+}
+
+header .contRow .lang svg {
+    margin: 0 11px;
+    transition: 0.2s ease-in;
+}
+
+header .contRow .lang.active .dropdownMenu {
+    visibility: visible;
+    opacity: 1;
+}
+
+header .contRow .lang.active svg {
+    transform: rotate(180deg);
+}
+
+header .contRow .theme {
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+header .contRow .theme .light {
+    display: none;
+}
+
+header .hamburger {
+    position: absolute;
+    top: 40px;
+    right: 22px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    display: none;
+    z-index: 6;
+}
+
+header .hamburger div {
+    pointer-events: none;
+    height: 3px;
+    width: 30px;
+    background: rgb(0, 0, 0);
+    margin-top: 5px;
+    transition: 1s ease;
+}
+
+header.darkMode .contRow .logo .logoDark {
+    display: block;
+}
+
+header.darkMode .contRow .logo .logoLight {
+    display: none;
+}
+
+header.darkMode .contRow .theme .light {
+    display: block;
+}
+
+header.darkMode .contRow .theme .dark {
+    display: none;
+}
+
+header.darkMode .contRow .lang a {
+    color: #fff;
+}
+
+header.darkMode .contRow .lang svg path {
+    stroke: #fff;
+}
+
+header.darkMode .contRow nav ul li a {
+    color: #fff;
+}
+
+header.active {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    filter: drop-shadow(0px 2px 10px rgba(139, 139, 139, 0.25));
+}
+
+@media (max-width: 1200px) {
+    header .contRow nav {
+        margin-right: 40px;
+    }
+
+    header .contRow nav .menu {
+        margin-left: 20px;
+        column-gap: 20px;
+    }
+
+    header .contRow nav .menu li a {
+        font-size: 12px;
+    }
+
+    header .contRow .lang a {
+        font-size: 12px;
+    }
+
+    header .contRow .theme {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header .contRow .logo {
+        margin-right: auto;
+    }
+
+    header .contRow nav {
+        margin: 0;
+    }
+
+    header .contRow nav .menu {
+        background: rgb(99, 95, 95);
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 6;
+        padding: 57px 0 0 30px;
+        transform: translateX(-100%);
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    header .contRow nav .menu li {
+        margin-bottom: 24px;
+    }
+
+    header .contRow nav .menu li a {
+        color: #fff;
+        font-family: Inter;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration-line: underline;
+    }
+
+    header .contRow .theme {
+        position: relative;
+        right: 120px;
+    }
+
+    header .hamburger {
+        display: inline;
+    }
+
+    header .hamburger .line1.toggle {
+        transform: translateY(10px) rotateZ(45deg);
+    }
+
+    header .hamburger .line2.toggle {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    header .hamburger .line3.toggle {
+        transform: translateY(-6px) rotateZ(-45deg);
+    }
+}
+
+@media (max-width: 420px) {
+    header .contRow .logo img {
+        width: 100px;
+    }
+
+    header .hamburger {
+        top: 30px;
+    }
+}
